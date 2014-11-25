@@ -4,9 +4,11 @@
 %table#movies
   %thead
     %tr
-      %th Movie Title
+      %th#title_header{class: th_css_class('title')}
+        = sortable 'Movie Title', 'title'
       %th Rating
-      %th Release Date
+      %th#release_date_header{class: th_css_class('release_date')}
+        = sortable 'Release Date', 'release_date'
       %th More Info
   %tbody
     - @movies.each do |movie|
