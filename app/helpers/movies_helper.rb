@@ -8,9 +8,9 @@ module MoviesHelper
     column == sorting_column ? 'hilite' : nil
   end
 
-  def sortable(title, column)
+  def sortable(title, column, id)
     direction = (column == sorting_column && sort_direction == 'asc') ? 'desc' : 'asc'
-    link_to title, sort: column, direction: direction
+    link_to title, {sort: column, direction: direction}, id: id
   end
 
   def sort_direction
