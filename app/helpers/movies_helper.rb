@@ -21,4 +21,9 @@ module MoviesHelper
     params[:sort] if Movie.column_names.include? params[:sort]
   end
 
+  def legal_ratings
+    params[:ratings]
+    # if @all_ratings.include?(params[:ratings].)
+  end
+
 end
