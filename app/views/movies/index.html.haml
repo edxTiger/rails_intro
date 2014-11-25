@@ -12,10 +12,12 @@
   %thead
     %tr
       %th#title_header{class: th_css_class('title')}
-        = sortable 'Movie Title', 'title'
+        = link_to 'Movie Title', sort: 'title', direction: (params[:direction] == 'asc') ? 'desc' : 'asc'
+        -#= sortable 'Movie Title', 'title'
       %th Rating
       %th#release_date_header{class: th_css_class('release_date')}
-        = sortable 'Release Date', 'release_date'
+        = link_to 'Release Date', sort: 'release_date', direction: (params[:direction] == 'asc') ? 'desc' : 'asc'
+        -#= sortable 'Release Date', 'release_date'
       %th More Info
   %tbody
     - @movies.each do |movie|

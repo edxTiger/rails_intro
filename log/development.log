@@ -3102,3 +3102,103 @@ Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-25 05:17:00 -0300
 Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/movies?direction=desc&ratings%5BG%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2014-11-25 05:32:21 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"direction"=>"desc", "ratings"=>{"G"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36m (0.5ms)[0m  [1mSELECT "movies"."rating" FROM "movies" [0m
+  [1m[35mMovie Load (1.0ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R') ORDER BY release_date desc
+  Rendered movies/index.html.haml within layouts/application (8.9ms)
+Completed 200 OK in 17.3ms (Views: 14.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-25 05:32:21 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-25 05:32:21 -0300
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-25 05:32:21 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-25 05:32:21 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies?direction=asc&sort=release_date" for 127.0.0.1 at 2014-11-25 05:32:23 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"direction"=>"asc", "sort"=>"release_date"}
+  [1m[36m (0.2ms)[0m  [1mSELECT "movies"."rating" FROM "movies" [0m
+  [1m[35mMovie Load (0.6ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R') ORDER BY release_date asc
+  Rendered movies/index.html.haml within layouts/application (10.9ms)
+Completed 200 OK in 18.5ms (Views: 16.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-25 05:32:23 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-25 05:32:23 -0300
+Served asset /jquery.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-25 05:32:23 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-25 05:32:23 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies?direction=desc&sort=release_date" for 127.0.0.1 at 2014-11-25 05:32:24 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"direction"=>"desc", "sort"=>"release_date"}
+  [1m[36m (0.3ms)[0m  [1mSELECT "movies"."rating" FROM "movies" [0m
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R') ORDER BY release_date desc
+  Rendered movies/index.html.haml within layouts/application (9.3ms)
+Completed 200 OK in 19.7ms (Views: 17.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-25 05:32:24 -0300
+Served asset /jquery.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-25 05:32:24 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-25 05:32:24 -0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-25 05:32:24 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/movies?direction=asc&sort=title" for 127.0.0.1 at 2014-11-25 05:32:24 -0300
+Processing by MoviesController#index as HTML
+  Parameters: {"direction"=>"asc", "sort"=>"title"}
+  [1m[36m (0.5ms)[0m  [1mSELECT "movies"."rating" FROM "movies" [0m
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'R') ORDER BY title asc
+  Rendered movies/index.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 16.6ms (Views: 13.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-25 05:32:25 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-25 05:32:25 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-25 05:32:25 -0300
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-25 05:32:25 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
