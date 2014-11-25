@@ -1,13 +1,27 @@
 class MoviesController < ApplicationController
 
   def index
-    session[:sort] = params[:sort] unless params[:sort].nil?
-    session[:direction] = params[:direction] unless params[:direction].nil?
-    
     @all_ratings = Movie.pluck(:rating).uniq.sort
-    @checked_ratings = []
-    params[:ratings].nil? ? @checked_ratings = @all_ratings : params[:ratings].each_key { |k| @checked_ratings << k }
-    @movies = Movie.where(rating: @checked_ratings).order "#{params[:sort]} #{params[:direction]}"
+    @checked_ratings = @all_ratings if @checked_ratings.nil?
+
+    session[:sort] = params[:sort] if !params[:sort].nil? && session[:sort] != params[:sort]
+    session[:direction] = params[:direction] if !params[:direction].nil? && session[:direction] != params[:direction]
+    session[:ratings] = params[:ratings] if !params[:ratings].nil? && session[:ratings] != params[:ratings]
+
+    redirect_to movies_path(sort: session[:sort], direction: session[:direction], ratings: session[:ratings]) if
+        params[:sort].nil? && params[:ratings].nil? && params[:direction].nil? && params[:direction].nil? &&
+            (!session[:sort].nil? || !session[:ratings].nil?)
+
+    @sort = session[:sort]
+    @direction = session[:direction]
+    @ratings = session[:ratings]
+
+    session[:ratings].nil? ? ratings = Movie.pluck(:rating).uniq.sort : ratings = @ratings.keys
+    @checked_ratings = ratings
+
+    (@sort.nil?) ?
+      @movies = Movie.where(rating: ratings) :
+      @movies = Movie.where(rating: ratings).order("#{params[:sort]} #{params[:direction]}")
   end
 
   def show
