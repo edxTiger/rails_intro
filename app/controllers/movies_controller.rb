@@ -1,7 +1,9 @@
 class MoviesController < ApplicationController
 
   def index
-    # @movies = Movie.order "#{params[:sort]} #{params[:direction]}"
+    session[:sort] = params[:sort] unless params[:sort].nil?
+    session[:direction] = params[:direction] unless params[:direction].nil?
+    
     @all_ratings = Movie.pluck(:rating).uniq.sort
     @checked_ratings = []
     params[:ratings].nil? ? @checked_ratings = @all_ratings : params[:ratings].each_key { |k| @checked_ratings << k }
